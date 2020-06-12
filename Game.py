@@ -1,8 +1,3 @@
-"""
-    Nume: Nacu Florin Ionut
-    grupa: 242
-"""
-
 class Game:
     MIN_PLAYER = None   # the symbol of the player
     MAX_PLAYER = None   # the symbol of the pc
@@ -151,7 +146,7 @@ class Game:
                 s += 50
             else:
                 s += 25
-            s -= (abs(opossite_player.position[0] - current_player.bomb.position[0]) + abs(opossite_player.position[1] - current_player.bomb.position[1]))
+            s -= min((abs(opossite_player.position[0] - current_player.bomb.position[0]), abs(opossite_player.position[1] - current_player.bomb.position[1])))
         s += 25 * self.player_min.protection
         return s
 

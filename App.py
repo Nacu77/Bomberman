@@ -1,12 +1,7 @@
-"""
-    Nume: Nacu Florin Ionut
-    grupa: 242
-"""
-
 import time
-from Proiect_Pb2.Game import Game, Player, Bomb, in_explosion_range
-from Proiect_Pb2.State import State
-from Proiect_Pb2.Algorithms import min_max, alpha_beta
+from src.Game import Game, Player, Bomb, in_explosion_range
+from src.State import State
+from src.Algorithms import min_max, alpha_beta
 
 
 def print_if_final(current_state):
@@ -83,7 +78,7 @@ def update_current_state(current_state):
     # Check if the new position is in the range of an explosion (updates the protection and remove some bombs if necessary)
     check_explosion(current_state, current_state.game.player_min)
 
-    # If the player didn't have ant bomb, ask him if he wants to place one behind him
+    # If the player didn't have any bomb, ask him if he wants to place one behind him
     if current_state.game.player_min.bomb is None:
         valid_answer = False
         while not valid_answer:
@@ -182,10 +177,10 @@ def main():
     while not valid_answer:
         difficulty = input("Choose difficulty: hard / medium / easy\n")
         if difficulty == "hard":
-            State.DEPTH_MAX = 7
+            State.DEPTH_MAX = 9
             valid_answer = True
         elif difficulty == "medium":
-            State.DEPTH_MAX = 5
+            State.DEPTH_MAX = 6
             valid_answer = True
         elif difficulty == "easy":
             State.DEPTH_MAX = 3

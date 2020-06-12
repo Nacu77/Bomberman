@@ -1,9 +1,4 @@
-"""
-    Nume: Nacu Florin Ionut
-    grupa: 242
-"""
-
-from Proiect_Pb2.Game import Game
+from src.Game import Game
 
 
 """-----------Minimax Algorithm-----------"""
